@@ -1,35 +1,10 @@
-<?php
-include "common/lib/config.php";
-include LIB_DIR . "/session.php";
-include LIB_DIR . "/function.php";
-require INC_DIR . "/start.php";
-$class_check = '';
-$connect = sqldb();
-$str = sqlone("select * from test limit 1");    // 필드하나 불러오기
-
-$list = sqlrow("select * from test limit 1"); //다중필드
-
-$result = sqlq("select * from test");
-while ($list = mysql_fetch_assoc($result))
-//echo $list['str']."<br />";
-    if (isMobile()) {
-        header("location: http://fafa.co.kr/mobile/index.php");
-        exit;
-    }
-
-$fb_sign = 'facebook_sign';
-$fb_login = 'facebook_login';
-
-$user_no = $user_no_static;
-
-$temp_1 = (10 / 10);
-//echo $temp_1;
-
-?>
+<!DOCTYPE html>
+<html>
 <head>
-    <title>FAFA</title>
-    
-    <script type="text/javascript">
+<meta charset="UTF-8">
+<title>FAFA</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>    
+<script type="text/javascript">
         $(document).ready(function () {
             $('#sc_1_1').animate({
                 width: "80%"}, 2000);
@@ -40,7 +15,7 @@ $temp_1 = (10 / 10);
             $('#sc_1_4').animate({
                 width: "90%"}, 2000);
         });
-    </script>
+</script>
 
 </head>
 
