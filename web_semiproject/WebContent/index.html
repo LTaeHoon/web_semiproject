@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FAFA</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>    
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sc_1_1').animate({
+                width: "80%"}, 2000);
+            $('#sc_1_2').animate({
+                width: "20%"}, 2000);
+            $('#sc_1_3').animate({
+                width: "40%"}, 2000);
+            $('#sc_1_4').animate({
+                width: "90%"}, 2000);
+        });
+</script>
+
+</head>
+
+<body>
+    <div align="left" style="display:none;">
+        <img id="image" style="display:block"/>
+        <div id="name" style="display:block"></div>
+        <div id="id" style="display:block"></div>
+        <div id="email" style="display:block"></div>
+    </div>
+
+
+
+    <?php require INC_DIR . "/header.php"; ?>
+    <div class="fa_stats_bg">
+        <div id="fa_stats">
+            <p>FAFA STATS</p>
+
+            <div class="stats_box">
+                <ul>
+                    <li class="teams">
+                        <ul>
+                            <li class="stats_number"><span>1</span><span>0</span><span>5</span><span>5</span><span>9</span></li>
+                            <li><img src="<?= IMG_URL ?>/number_border.gif" alt="bar"/></li>
+                            <li class="stats_txt">RESISTERED TEAMS</li>
+                            <li style="height:14px; width:238px;background-color:#fff; border:1px solid #000">
+                                <span id="sc_1_1" class="team_chart_inner" style="width:1%;height:14px;background-color:#feac0b"></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="stats_blank"></li>
+                    <li class="player">
+                        <ul>
+                            <li class="stats_number"><span>1</span><span>5</span><span>3</span></li>
+                            <li><img src="<?= IMG_URL ?>/number_border.gif" alt="bar"/></li>
+                            <li class="stats_txt">PLAYER</li>
+                            <li style="height:14px; width:238px;background-color:#fff; border:1px solid #000">
+                                <span id="sc_1_2" class="team_chart_inner" style="width:1%;height:14px;background-color:#feac0b"></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="stats_blank"></li>
+                    <li class="competition">
+                        <ul>
+                            <li class="stats_number"><span>1</span><span>1</span><span>0</span><span>3</span><span>3</span><span>5</span></li>
+                            <li><img src="<?= IMG_URL ?>/number_border.gif" alt="bar"/></li>
+                            <li class="stats_txt">COMPETITION</li>
+                            <li style="height:14px; width:238px;background-color:#fff; border:1px solid #000">
+                                <span id="sc_1_3" class="team_chart_inner" style="width:1%;height:14px;background-color:#feac0b"></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="stats_blank"></li>
+                    <li class="goals_scored">
+                        <ul>
+                            <li class="stats_number"><span>1</span><span>1</span><span>0</span><span>3</span><span>3</span><span>5</span></li>
+                            <li><img src="<?= IMG_URL ?>/number_border.gif" alt="bar"/></li>
+                            <li class="stats_txt">GOALS SCORED</li>
+                            <li style="height:14px; width:238px;background-color:#fff; border:1px solid #000">
+                                <span id="sc_1_4" class="team_chart_inner" style="width:1%;height:14px;background-color:#feac0b"></span>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="service">
+        <div class="ser_box1">
+            <div class="ser_txt"><p>SERVICE</p></div>
+        </div>
+        <div class="ser_box2">
+            <img src="<?= IMG_URL ?>/service_tri.gif" alt=""/>
+        </div>
+    </div>
+
+    <div class="community">
+        <div class="commu_title_box">
+            <p>COMMUNITY</p>
+            <ul class="commu_title">
+                <li class="border1-1"></li>
+                <li><span>커뮤니티</span></li>
+                <li class="border1-1"></li>
+            </ul>
+        </div>
+
+        <div class="commu_icon_box">
+            <ul class="commu_icon">
+                <li>
+                    <span><img src="<?= IMG_URL ?>/icon1.gif" alt=""/></span>
+                    <p class="commu_txt1">커뮤니티는 팀 홈페이지<br/> 서비스로 동호회 아카이브<br/> 구축을 도와줍니다.</p>
+                </li>
+                <li>
+                    <span><img src="<?= IMG_URL ?>/icon2.gif" alt=""/></span>
+                    <p class="commu_txt2">커뮤니티에서는 팀의 모든<br/>일정, 선수, 출석, 회비 관리를<br/>가능하게 합니다.</p>
+                </li>
+                <li>
+                    <span><img src="<?= IMG_URL ?>/icon3.gif" alt=""/></span>
+                    <p>우리팀 기록분석실에서 <br/> 팀과 자신의 경기력을 확인하세요.</p>
+                </li>
+                <li class="commu_img">
+                    <span ><img src="<?= IMG_URL ?>/icon4.gif" alt=""/></span>
+                    <p class="commu_txt4">사진과 동영상을 통해<br/> 팀의 추억을 공유하세요.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="analysis_box">
+
+        <div class="analysis_title_box">
+            <p>ANALYSIS</p>
+            <ul class="analysis_title">
+                <li class="border2-1"></li>
+                <li><span>경기기록분석</span></li>
+                <li class="border2-2"></li>
+            </ul>
+        </div>
+
+        <div class="analysis">
+            <ul class="analy_text">
+                <li><span><img src="<?= IMG_URL ?>/analy_li.gif" alt=""/></span>FAFA는 아마추어 축구 동호인들의 경기 기록을 다양한 요소를 활용하여 분석 제공하는 서비스 입니다.</li>
+                <li><span><img src="<?= IMG_URL ?>/analy_li.gif" alt=""/></span>FAFA에서는 경기분석을 위해 경기기록을 입력할 수 있는 어플리케이션을 제공하고 있습니다.</li>
+                <li><span><img src="<?= IMG_URL ?>/analy_li.gif" alt=""/></span>경기기록분석을 통해 팀과 자신의 기록을 확인할 수 있습니다.</li>
+                <li><span><img src="<?= IMG_URL ?>/analy_li.gif" alt=""/></span>기록을 바탕으로 모든 팀원이 함께 하는 팀의 역사를 만들 수 있습니다.</li>
+            </ul>
+
+            <p><span>*</span>무료분석은 아래의 그림과 같이 이루어져 있습니다.</p>
+
+            <p class="analy_img"><img src="<?= IMG_URL ?>/analy_img.jpg" alt=""/></p>
+        </div>
+
+    </div>
+
+    <div class="analy_service">
+        <div class="analyser_title_box">
+            <p class="analyser_title">기록분석서비스</p>
+            <p><img src="<?= IMG_URL ?>/c_border.gif" alt=""/></p>
+        </div>
+        <script type="text/javascript" src="<?= JS_URL ?>/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="<?= JS_URL ?>/jssor.js"></script>
+        <script type="text/javascript" src="<?= JS_URL ?>/jssor.slider.js"></script>
+        <script>
+
+        jQuery(document).ready(function ($) {
+
+            var _SlideshowTransitions = [
+                //Fade
+                {$Duration: 1200, $Opacity: 2}
+            ];
+
+            var options = {
+                $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1, //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 3000, //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1, //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true, //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500, //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20, //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1, //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0, //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1, //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1, //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 3, //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: {//[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$, //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions, //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1, //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+                $BulletNavigatorOptions: {//[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$, //[Required] Class to create navigator instance
+                    $ChanceToShow: 2, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1, //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1, //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1, //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10, //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10, //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$, //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 1170));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+        </script>
+        <!--<p><img src="<?= IMG_URL ?>/anal_service.jpg" alt="선수 조합별 성적표"/></p>-->
+
+        <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1170px; height: 557px; overflow: hidden; ">
+
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1170px; height: 557px; overflow: hidden;">
+                <div>
+                    <img u="image" src="<?= IMG_URL ?>/fafa_main_middle.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="<?= IMG_URL ?>/fafa_main_middle2.jpg" />
+                </div>
+
+            </div>
+
+            <style>
+
+                .jssora12l, .jssora12r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 46px;
+                    cursor: pointer;
+                    background: url(<?= IMG_URL ?>/a06.png) no-repeat;
+                    overflow: hidden;
+                }
+                .jssora12l { background-position: -7px -37px; }
+                .jssora12r { background-position: -64px -37px; }
+                .jssora12l:hover { background-position: -127px -37px; }
+                .jssora12r:hover { background-position: -184px -37px; }
+                .jssora12l.jssora12ldn { background-position: -247px -37px; }
+                .jssora12r.jssora12rdn { background-position: -304px -37px; }
+            </style>
+            <span u="arrowleft" class="jssora12l" style="top: 50%; margin-top:-25px; left: 0px;">
+            </span>
+            <span u="arrowright" class="jssora12r" style="top: 50%; margin-top:-25px; right: 0px;">
+            </span>
+        </div>
+
+    </div>
+
+
+
+    <div id="video">
+        <div class="video_box">
+            <div class="video_box2">
+                <p><iframe width="654" height="460" src="https://www.youtube.com/embed/zqPrr-Ta6Yc" frameborder="0" allowfullscreen></iframe></p>
+                <div class="video_right">
+                    <ul>
+                        <li>자신의 팀을 만들고 기록해보세요</li>
+                        <li>FAFA를 통해 쉽고 재밌게 팀을 관리 할 수 있습니다.</li>
+                    </ul>
+                    <?php
+                    if (!$user_no_static) {
+                        ?>
+                        <span><a href="/user/login.php"><img src="<?= IMG_URL ?>/join.gif" alt="회원가입"/></a></span>
+                    <?php } else { ?>
+                        <span><a href="/record_room/match_index.php"><img src="<?= IMG_URL ?>/join_2.gif" alt="기록분석실"/></a></span>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+
+    function main_notice_view() {
+        $connect = sqldb();
+        $result = sqlq("select * from b_notice where del_yn='N' and gongji=0 limit 5");
+
+        for ($ii = 0; $ii < 5; $ii++) {
+            $r = mysql_fetch_assoc($result);
+            $html .="<li><a href=\"/customer/notice_list.php?bbs_sub=view&bbs_no=" . $r['no'] . "\">" . getString(strip_tags($r['subject']), 180) . "</a></li>";
+        }
+        return $html;
+    }
+
+    function main_soccer_view() {
+        $connect = sqldb();
+        $result = sqlq("select * from b_soccer where del_yn='N' limit 5");
+
+        for ($ii = 0; $ii < 5; $ii++) {
+            $r = mysql_fetch_assoc($result);
+            $html .="<li><a href=\"/customer/Soccer_equipment.php?bbs_sub=view&bbs_no=" . $r['no'] . "\">" . getString(strip_tags($r['subject']), 180) . "</a></li>";
+        }
+        return $html;
+    }
+
+    function main_others_view() {
+        $connect = sqldb();
+        $result = sqlq("select * from b_others where del_yn='N' limit 5");
+
+        for ($ii = 0; $ii < 5; $ii++) {
+            $r = mysql_fetch_assoc($result);
+            $html .="<li><a href=\"/customer/others_list.php?bbs_sub=view&bbs_no=" . $r['no'] . "\">" . getString(strip_tags($r['subject']), 180) . "</a></li>";
+        }
+        return $html;
+    }
+    ?>
+
+
+
+    <div id="notice_b">
+
+        <div class="board_box1">
+            <p>NOTICE</p>
+        </div>
+        <div class="board_box2">
+            <p class="tri"><img src="<?= IMG_URL ?>/board_tri.gif" alt=""/></p>
+        </div>
+
+        <div class="board_box">
+            <div class="info">
+                <p>공지사항</p>
+                <ul class="info_txt">
+                    <?= main_notice_view(); ?>
+                </ul>
+                <span class="more"><a href="/customer/notice_list.php"><img src="<?= IMG_URL ?>/more.gif" alt="more"/></a></span>
+            </div>
+
+            <div class="soccer_info">
+                <p>축구용품정보</p>
+                <ul class="soccerinfo_txt">
+                    <?= main_soccer_view(); ?>
+                </ul>
+                <span class="more"><a href="/customer/Soccer_equipment.php"><img src="<?= IMG_URL ?>/more.gif" alt="more"/></a></span>
+            </div>
+
+            <div class="etc_board">
+                <p>기타게시판</p>
+                <ul class="etcborard_txt">
+                    <?= main_others_view(); ?>
+                </ul>
+                <span class="more"><a href="/customer/others_list.php"><img src="<?= IMG_URL ?>/more.gif" alt="more"/></a></span>
+            </div>
+        </div>
+    </div>
+    <?php require INC_DIR . "/footer.php"; ?>
+</body>
+<?php require INC_DIR . "/end.php"; ?>
