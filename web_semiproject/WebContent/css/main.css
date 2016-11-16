@@ -1,0 +1,55 @@
+@charset "utf-8";
+body,nav,div,ul,li,a,h1,p,span,img{padding:0; margin:0;}
+body{font-family:맑은 고딕; }
+
+.header	{position:relative; margin:0 auto; width:1230px; height:95px;}
+.header ul	{position:absolute; top:40px; right:20px; height:20px; }
+.header ul li{float:left; padding-left:43px; font-size:16px; font-weight:bold; }
+.header ul .home{color:#2a65b0;}
+.visual{ margin:0 auto; height:425px; background:url(../img/visual_bg.jpg) 50% no-repeat; background-size:100% 100%; padding:0 }
+.left_visual{display:inline-block; margin-left:100px;}
+a {text-decoration: none; color:#333;}
+a:hover{cursor:pointer;}
+ul{list-style-type:none;}
+
+.fa_stats_bg{background:url(../img/stats_bg.jpg) 50% no-repeat; margin:0 auto; height:500px; background-size:100% 100%;}
+
+#fa_stats{position:relative; margin:0 auto; width:1230px; height:563px; }
+#fa_stats p{ text-align:center; font-size:30px; font-weight:bold; padding-top:74px;}
+
+.stats_box{margin:0 auto; width:1230px; height:174px; margin-top:100px;}
+.stats_box ul{display:inline-block;}
+.stats_box ul li{float:left; }
+
+.stats_box .stats_blank{width:92.6px; height:10px;}
+
+.teams,.player,.competition,.goals_scored{width:238px; height:171px; }
+
+.teams span,.player span,.goals_scored span,.competition span{font-size:60px; font-weight:bold;  color:#444444;}
+
+.team_chart_inner{width:1%;height:14px;background-color:orange;border:0;}
+
+ #stats_box .competition .stats_number_1{font-weight:none;}
+ .stats_number_1{margin-left:17px;}
+.stats_box  .stats_number{text-align:center; width:237px;  font-weight: bold;}
+ .stats_txt{width:237px; text-align:center; padding:19px 0 33px 0; font-weight:bold;  font-size:14px; }
+
+.ser_title{margin:0 auto; background-size:100% 100%; height:60px; background-color:#3b9254;font-size:30px; text-align: center;color:white;font-weight: bold;padding-top:20px; }
+#footer_box{margin:0 auto; background-size:100% 100%;  background-color:#333;}
+.footer{margin:0 auto; width:1200px; height:182px; padding:46px 0;color: #fff; position: relative;}
+.f_logo{width:108px; height:182px; margin-right:197px; float:left; }
+.f_facebook{display:block;  margin-top:5px;}
+.f_info ul li a{color: white;}
+.f_info ul {float:left; width:445px;}
+.f_info ul li{font-family:NanumGothic; font-size:12px;  line-height:180%;}
+.f_info .f_fafa_title{ font-size:18px; font-weight:bold; padding-bottom:13px; color:#fff;}
+.f_info p a{color: #fff;}
+.f_info p{margin-bottom: 10px;}
+
+.back_to_top{position:fixed;width:50px;bottom:0;left:60%;margin-left:380px;}  
+.back_to_top:hover{cursor:pointer;}
+
+
+	
+	
+	
