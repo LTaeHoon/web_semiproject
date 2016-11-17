@@ -4,16 +4,29 @@
 <meta charset="UTF-8">
 <title>FAFA</title>
 <script type="text/javascript" src="./js/jquery3.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#sc_1_1').animate({width:'80%'},3000);
-		$('#sc_1_2').animate({width:'50%'},3000);
-		$('#sc_1_3').animate({width:'60%'},3000);
-		$('#sc_1_4').animate({width:'90%'},3000);
+		//$('#sc_1_1').animate({width:'80%'},3000);
+		//$('#sc_1_2').animate({width:'50%'},3000);
+		//$('#sc_1_3').animate({width:'60%'},3000);
+		//$('#sc_1_4').animate({width:'90%'},3000);
 		
 		$('.stats').click(function(event){
-			event.preventDefault();  
-			 $('html, body').animate({scrollTop:$('#fa_stats').offset().top}, 1500);
+			event.preventDefault(); 
+		
+			 $('html, body').animate({scrollTop:$('#fa_stats').offset().top}, 1000);
+				$('#sc_1_1').animate({width:'80%'},4000);
+				$('#sc_1_2').animate({width:'50%'},4000);
+				$('#sc_1_3').animate({width:'60%'},4000);
+				$('#sc_1_4').animate({width:'90%'},4000);
+				 	 
+			 return false;
+		});
+		$('.service').click(function(event){
+			event.preventDefault();
+			 $('html, body').animate({scrollTop:$('#service').offset().top}, 1000);
 			 return false;
 		});
 		var offset = 100;  
@@ -31,14 +44,23 @@
 	        $('html, body').animate({scrollTop: 0}, duration);  
 	        return false;  
 	    })  
+		
 	
 		
 	});
 	
+	function member_window(){
+		window.open('./membership/membership.html','회원가입','width=600px, height=610px');
+	}
 	
+	function login_window(){
+		window.open('./login/login.html','로그인','width=600px, height=400px');
+	}
 
 </script>
+
 <link href="./css/main.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 	
@@ -49,8 +71,8 @@
 		 		<li><a href="#" class='home'>HOME</a></li>
 		 		<li><a href="#" class='service'>서비스소개</a></li>
 		 		<li><a href="#" class='stats'>기록</a></li>
-		 		<li><a href="#" class='login'>LOGIN</a></li>
-		 		<li><a href="#" class='signup'>회원가입</a></li>
+		 		<li><a href="#" class='login' onclick="login_window()">LOGIN</a></li>
+		 		<li><a href="#" class='member' onclick="member_window()">회원가입</a></li>
 		 	</ul>
 		 </nav>
 		</div>
@@ -114,9 +136,50 @@
     	</div>
     	<div id="service">
 				<div class="ser_title" ><p>SERVICE</p></div>
-				<div></div>
+				<div class="community" style="text-align:center;">
+					<p style="color:green;">COMMUNITY</p>
+					<hr>
+					<p style="font-size:30px">커뮤니티</p>
+				</div>
+				<div class="commu_box">
+					<ul class="commu_list">
+						<li>
+						<span><img src="./img/icon1.gif"></span>
+						<p>커뮤니티는 팀 홈페이지<br/> 서비스로 동호회 아카이브 <br/>구축을 도와줍니다.</p>
+						</li>	
+					    <li>
+                    	<span><img src="./img/icon2.gif" alt=""/></span>
+                    	<p class="commu_txt2">커뮤니티에서는 팀의 모든<br/>일정, 선수, 출석, 회비 관리를<br/>가능하게 합니다.</p>
+                		</li>
+                		<li>
+                    	<span><img src="./img/icon3.gif" alt=""/></span>
+                    	<p>우리팀 기록분석실에서 <br/> 팀과 자신의 경기력을 확인하세요.</p>
+                		</li>
+               			<li class="commu_img">
+	                    <span ><img src="./img/icon4.gif" alt=""/></span>
+	                    <p class="commu_txt4">사진과 동영상을 통해<br/> 팀의 추억을 공유하세요.</p>
+                		</li>
+					</ul>
+				</div>	
+		
 		</div>
+		<div>
+				<div class="analysis" style="text-align:center;">
+					<p style="color:green;">ANALYSIS</p>
+					<hr>
+					<p class="intitle" style="font-size:30px; height:50px">기록분석서비스</p>
+				</div>
+		
+		</div>
+		<div class="cycle-slideshow" data-cycle-timeout='2000' data-cycle-fx=scrollHorz>
+		<div class="cycle-pager"></div>
+			<img src="./img/fafa_main_middle.jpg" >
+			<img src="./img/fafa_main_middle2.jpg">
 			
+		
+		</div>
+
+		
 			
     	<div id="footer_box">
     		<div class="footer">

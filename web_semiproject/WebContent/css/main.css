@@ -20,28 +20,36 @@ ul{list-style-type:none;}
 .stats_box{margin:0 auto; width:1230px; height:174px; margin-top:100px;}
 .stats_box ul{display:inline-block;}
 .stats_box ul li{float:left; }
-
 .stats_box .stats_blank{width:92.6px; height:10px;}
-
 .teams,.player,.competition,.goals_scored{width:238px; height:171px; }
-
 .teams span,.player span,.goals_scored span,.competition span{font-size:60px; font-weight:bold;  color:#444444;}
-
-.team_chart_inner{width:1%;height:14px;background-color:orange;border:0;}
-
+.team_chart_inner{width:1%;height:14px;background-color:orange;}
  #stats_box .competition .stats_number_1{font-weight:none;}
  .stats_number_1{margin-left:17px;}
 .stats_box  .stats_number{text-align:center; width:237px;  font-weight: bold;}
  .stats_txt{width:237px; text-align:center; padding:19px 0 33px 0; font-weight:bold;  font-size:14px; }
 
+#service{margin:0 auto;background-size:100% 100%; margin-top:0;}
 .ser_title{margin:0 auto; background-size:100% 100%; height:60px; background-color:#3b9254;font-size:30px; text-align: center;color:white;font-weight: bold;padding-top:20px; }
+.community{margin:0 auto; background-size:100% 100%; height:60px;}
+.community p{margin-top:20px}
+.community hr{width:780px; margin:0 auto}
+.commu_box{margin:0 auto; width:1200px; height:250px;padding-top:100px; }
+.commu_box ul li{float:left; text-align:center;}
+.commu_list li span img{display:block;margin-left:auto;margin-right:auto;}
+.analysis{margin:0 auto; background-size:100% 100%; height:60px;}
+.analysis p{margin-top:20px; }
+/*.analysis .intitle{ margin:0px;}*/
+.analysis hr{width:780px;margin:0 auto;}
+
+
 #footer_box{margin:0 auto; background-size:100% 100%;  background-color:#333;}
 .footer{margin:0 auto; width:1200px; height:182px; padding:46px 0;color: #fff; position: relative;}
 .f_logo{width:108px; height:182px; margin-right:197px; float:left; }
 .f_facebook{display:block;  margin-top:5px;}
 .f_info ul li a{color: white;}
 .f_info ul {float:left; width:445px;}
-.f_info ul li{font-family:NanumGothic; font-size:12px;  line-height:180%;}
+.f_info ul li{font-size:12px;  line-height:180%;}
 .f_info .f_fafa_title{ font-size:18px; font-weight:bold; padding-bottom:13px; color:#fff;}
 .f_info p a{color: #fff;}
 .f_info p{margin-bottom: 10px;}
@@ -50,6 +58,27 @@ ul{list-style-type:none;}
 .back_to_top:hover{cursor:pointer;}
 
 
+.cycle-pager { 
+    text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+}
+.cycle-pager span { 
+    font-family: arial; font-size: 50px; width: 16px; height: 16px; 
+    display: inline-block; color: #ddd; cursor: pointer; 
+}
+.cycle-pager span.cycle-pager-active { color: #D69746;}
+.cycle-pager > * { cursor: pointer;}
 	
-	
+
+.cycle-slideshow, .cycle-slideshow * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+
+.cycle-slideshow { width: 90%; width: 800px; margin: 50px auto; padding: 0; position: relative;
+    background: url(http://malsup.github.com/images/spinner.gif) 50% 50% no-repeat;
+
+ }
+
+.cycle-slideshow img { 
+  position: absolute; top: 0; left: 0;
+    width: 100%; padding: 0; display: block;
+}
 	
