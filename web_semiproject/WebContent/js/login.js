@@ -55,8 +55,8 @@ $(document).ready(function(){
 	
 	$('#regist_img').click(function(){
 		alert('회원가입으로 이동합니다.');
-		url = 'http://www.naver.com'; // 회원가입 파일 주소 입려
-		window.open(url,(''));
+		url = '../membership/membership.html'; // 회원가입 파일 주소 입려
+		window.open(url,'회원가입','width=600px, height=610px');
 		window.close();
 		
 	});
