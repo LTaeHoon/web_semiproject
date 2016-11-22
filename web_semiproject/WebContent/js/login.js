@@ -31,6 +31,7 @@ $(document).ready(function(){
 					}); // each end
 						if(match==true){
 							alert('로그인 성공');
+							$('#login_frm').attr('method','post').submit();
 							$('#id').val('');
 							$('#pwd').val('');
 							window.close();
@@ -54,7 +55,8 @@ $(document).ready(function(){
 	
 	$('#regist_img').click(function(){
 		alert('회원가입으로 이동합니다.');
-		window.open('../membership/membership.html','회원가입','width=600px, height=610px');
+		url = '../membership/membership.html'; // 회원가입 파일 주소 입려
+		window.open(url,'회원가입','width=600px, height=610px');
 		window.close();
 		
 	});
