@@ -6,27 +6,53 @@
 <script type="text/javascript" src="./js/jquery3.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+<script src="./js/jquery.animateNumber.min.js"></script>
+<script src="./js/video.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		//$('#sc_1_1').animate({width:'80%'},3000);
-		//$('#sc_1_2').animate({width:'50%'},3000);
-		//$('#sc_1_3').animate({width:'60%'},3000);
-		//$('#sc_1_4').animate({width:'90%'},3000);
+		$('#sc_1_1').animate({width:'80%'},3000);
+		$('#sc_1_2').animate({width:'50%'},3000);
+		$('#sc_1_3').animate({width:'60%'},3000);
+		$('#sc_1_4').animate({width:'90%'},3000);
+		$('#registered_teams').animateNumber({number:1350},3000);
+		$('#players').animateNumber({number:14254},3000);
+		$('#competition').animateNumber({number:3540},3000);
+		$('#goals').animateNumber({number:28254},3000);
 		
 		$('.stats').click(function(event){
-			event.preventDefault(); 
-		
-			 $('html, body').animate({scrollTop:$('#fa_stats').offset().top}, 1000);
-				$('#sc_1_1').animate({width:'80%'},4000);
-				$('#sc_1_2').animate({width:'50%'},4000);
-				$('#sc_1_3').animate({width:'60%'},4000);
-				$('#sc_1_4').animate({width:'90%'},4000);
-				 	 
+			
+			if($('.header').offset().top>0){
+			$('body').animate({scrollTop:$('#fa_stats').offset().top-103}, 1000);
+			}else{
+				$('body').animate({scrollTop:$('#fa_stats').offset().top-206}, 1000);
+			}
+			$('#sc_1_1').removeAttr("style");
+			$('#sc_1_2').removeAttr("style");
+			$('#sc_1_3').removeAttr("style");
+			$('#sc_1_4').removeAttr("style");
+				$('#sc_1_1').animate({width:'80%'},3000);
+				$('#sc_1_2').animate({width:'50%'},3000);
+				$('#sc_1_3').animate({width:'60%'},3000);
+				$('#sc_1_4').animate({width:'90%'},3000);
+			$('#registered_teams').animateNumber({number:1350},3000);
+			$('#players').animateNumber({number:14254},3000);
+			$('#competition').animateNumber({number:3540},3000);
+			$('#goals').animateNumber({number:28254},3000);
+				
 			 return false;
 		});
 		$('.service').click(function(event){
+			if($('.header').offset().top>0){
+			$('body').animate({scrollTop:$('#service').offset().top-103}, 1000);
+			}else{
+				$('body').animate({scrollTop:$('#service').offset().top-206}, 1000);
+			}
+			return false;
+			
+		});
+		$('.home').click(function(event){
 			event.preventDefault();
-			 $('html, body').animate({scrollTop:$('#service').offset().top}, 1000);
+			 $('body').animate({scrollTop:0}, 1000);
 			 return false;
 		});
 		var offset = 100;  
@@ -45,7 +71,15 @@
 	        return false;  
 	    })  
 		
-	
+	    var menuOffset = $( '.header' ).offset();
+        $( window ).scroll( function() {
+          if ( $( document ).scrollTop() > menuOffset.top ) {
+            $( '.header' ).addClass( 'menuFixed' );
+          }
+          else {
+            $( '.header' ).removeClass( 'menuFixed' );
+          }
+        });
 		
 	});
 	
@@ -56,16 +90,18 @@
 	function login_window(){
 		window.open('./login/login.html','로그인','width=600px, height=400px');
 	}
-
+	
+	
+	
 </script>
 
 <link href="./css/main.css" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" type="text/css" href="./css/video-js.css">
 </head>
 <body>
 	
 		<div class="header">
-		 <h1><a href="/"><img src="./img/logo.gif" alt="FAFA"/></a></h1>
+		 <h1><a href="#"><img class="logo" src="./img/logo.gif" alt="FAFA"/></a></h1>
 		 <nav class='nav'>
 		 	<ul class="menu">
 		 		<li><a href="#" class='home'>HOME</a></li>
@@ -78,6 +114,17 @@
 		</div>
 		<div class="visual">
 			<span class="left_visual" ><img src="./img/left_visual.png"></span>
+			<div id="video">
+			<video class="video-js vjs-default-skin" 
+		       width="480" height="320"
+		       controls preload="auto" 
+		       poster="./img/pogba.jpg" data-setup="{}">       
+		
+				 <!-- 실행되는 브라우저에서 인식되는 않는 비디오 포멧 대비-->
+				 <source src="./video/pogba.mp4" type="video/mp4"></source>      
+				 
+			</video>
+		    </div>
 		</div>
 		<div class="fa_stats_bg">
         <div id="fa_stats">
@@ -87,7 +134,7 @@
                 <ul>
                     <li class="teams">
                         <ul>
-                            <li class="stats_number"><span>1</span></li>
+                            <li class="stats_number"><span id=registered_teams></span></li>
                             <li><img src="./img/number_border.gif" alt="bar"/></li>
                             <li class="stats_txt">RESISTERED TEAMS</li>
                             <li style="height:14px; width:238px;background-color:white; border:1px solid black;">
@@ -98,10 +145,10 @@
                     <li class="stats_blank"></li>
                     <li class="player">
                         <ul>
-                            <li class="stats_number"><span>1</span><span>5</span><span>3</span></li>
+                            <li class="stats_number"><span id=players></span></li>
                             <li><img src="./img/number_border.gif" alt="bar"/></li>
                             <li class="stats_txt">PLAYER</li>
-                            <li style="height:14px; width:238px;background-color:white; border:1px solid black">
+                            <li style="height:14px; width:238px;background-color:white; border:1px solid black;">
                                 <span id="sc_1_2" class="team_chart_inner"></span>
                             </li>
                         </ul>
@@ -109,7 +156,7 @@
                     <li class="stats_blank"></li>
                     <li class="competition">
                         <ul>
-                            <li class="stats_number"><span>1</span><span>1</span><span>0</span><span>3</span><span>3</span><span>5</span></li>
+                            <li class="stats_number"><span id="competition"></span></li>
                             <li><img src="./img/number_border.gif" alt="bar"/></li>
                             <li class="stats_txt">COMPETITION</li>
                             <li style="height:14px; width:238px;background-color:white; border:1px solid black">
@@ -120,7 +167,7 @@
                     <li class="stats_blank"></li>
                     <li class="goals_scored">
                         <ul>
-                            <li class="stats_number"><span>1</span><span>1</span><span>0</span><span>3</span><span>3</span><span>5</span></li>
+                            <li class="stats_number"><span id="goals"></span></li>
                             <li><img src="./img/number_border.gif" alt="bar"/></li>
                             <li class="stats_txt">GOALS SCORED</li>
                             <li style="height:14px; width:238px;background-color:white; border:1px solid black">

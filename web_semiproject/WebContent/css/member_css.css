@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+frm {
+	margin-top: 50px;
+}
+.imim{
+	margin:0;
+}
+body{
+	padding:0; 
+	margin-top;30px;
+	color:#333;
+	font-size:18px;
+	font-family:맑은고딕;
+	font-weight:bold;
+	/*background-image: url("../images/fafa_back_test.png");
+	background-size: 100%;
+	background-repeat: no-repeat;*/
+	}
+field{
+	border: 1px solid red;
+
+	}
+	input{
+	font-size:12px;
+	font-family:맑은고딕;
+	/*font-weight:bold*/
+	/*color:#5CD1E5;*/
+	}
+	
+#bottom{
+	margin-left: 50px;
+	/*text-align: center;*/
+	font:8px;
+	color:#333;
+	font-weight: bold;
+	font-family:맑은고딕;
+}
+.btn:hover{   /*마우스 오버시에 커서 모양 변경*/
+	cursor:pointer;
+}
+
+	

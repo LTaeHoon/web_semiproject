@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>membership</title>
+<link href="../css/member_css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+
+var idid=false;  // 중복체크 버튼 클릭스 idid = true값으로 변경
+var pwdpwd=false;   //비밀번호 확인 버튼 클릭시 pwdpwd = true값으로 변경
+
+function sel(email){ // select에서 변화가 있을 때    	 
+	 if(email.value==""){ // 직접입력 선택
+		document.getElementById("domain").value='';
+	   	document.getElementById("domain").focus();//커서 이동
+	 }
+	 else // 이메일 -> 도메인 이동
+	   document.getElementById("domain").value=email.value;
+};
+
+function data_check(){    //아이디와 비밀번호 칸의 공백 체크
+	if(frm.id.value == ""){   //아이디가 공백일 경우
+		alert('아이디를 입력해야 합니다.');
+		frm.id.focus();
+		return false;
+	}
+	if(frm.pwd.value ==""){  //비밀번호가 공백일 경우
+		alert('비밀번호를 입력해야 합니다.');
+		frm.id.focus();
+		return false;
+	}
+	if(frm.email_id.value==""){
+		alert('이메일 주소를 입력해야 합니다.');
+		frm.email_id.focus();
+		return false;
+	}
+	if(idid==false){
+		alert('아이디 중복체크를 해야 합니다.'); //아이디 중복체크 버튼을 클릭하지 않았을 떄
+		return false;
+	}
+	if(pwdpwd==false){ //비밀번호 확인 버튼을 클릭하지 않았을 때
+		alert('비밀번호 확인을 해야 합니다.');
+		return false;
+	}
+		else{
+		alert('회원가입 완료. 아이디로 로그인 하세요.');
+		window.close();
+		//회원가입창 닫고 로그인 팝업 띄우기
+	}
+};
+
+function id_check(){
+
+		if(frm.id.value == ""){   //아이디가 공백일 경우
+			alert('아이디를 입력해야 합니다.');
+			frm.id.focus();
+			return false;
+		}
+		else {
+			var request = new XMLHttpRequest();//1. Ajax객체 생성
+			request.open('get', './data.json', true);	//2. data 요청 준비 : request.open("전송방식", "url or filename", true(비동기)/false(동기));
+			request.send(); //실제 통신이 이루어짐
+			request.onreadystatechange = function(){  //4. 데이터 수신
+		if(request.readyState == 4 && request.status == 200){ //서버의 응답이 완료된 상태 : 4 && 정상적으로 응답이 된 상태 : 200
+			var obj = JSON.parse(request.responseText);	//json문자열 -> json객체
+				for(var i = 0; i < obj.member_id.length; i++){
+				if(obj.member_id[i].id == frm.id.value){
+					alert('중복된 아이디입니다.');
+					frm.id.focus();
+					return false;
+					}
+				}
+				alert('사용가능한 아이디 입니다.');
+				frm.pwd.focus();
+				}
+			idid=true;			
+			}
+
+		}
+}
+		
+function pwd_check(){  //비밀번호 확인 버튼 클릭시 수행되는 부분
+	if(frm.pwd.value ==""){
+		alert('비밀번호를 입력해야 합니다.');
+		frm.pwd.focus();
+		return false;
+	}
+	if(frm.p_check.value == ""){
+		alert('비밀번호가 일치하지 않습니다.');
+		frm.check.focus();
+		return false;
+	}
+	if(frm.pwd.value == frm.check.value){  //비밀번호와 확인칸의 값을 비교
+		alert('비밀번호 확인 완료');
+		pwdpwd=true;
+		frm.name.focus(); //비밀번호가 맞게 입력 되었으면 아래쪽의 name으로 커서 이동
+	}
+	else{
+		alert('비밀번호가 일치하지 않습니다.');
+		frm.check.focus();
+		return false;
+	}
+};
+
+function clean(){
+	frm.id.value="";
+	frm.pwd.value="";
+	frm.check.value="";
+	frm.name.value="";
+	frm.email_id.value="";
+	frm.domain.value="";
+	idid=false;
+	pwdpwd=false; //reset버튼 클릭시에 데이터를 지우고 idid값과 pwdpwd값을 false로 변경
+	
+}
+
+function window_close() {    //취소버튼 클릭시 창 닫음
+	window.close();
+};
+
+</script>
+</head>
+<body>
+<img src="../img/fafa_info.png"/>
+<form id="frm">    <!-- form 태그의 아이디는 frm  -->
+	<fieldset id = "field">
+		<legend>Member ship</legend> <!-- 글씨크기, 글자체 변경(글자체는 통일) -->
+		FAFA회원으로 가입하고 다양한 혜택을 누리세요.<br>
+		<!-- 아이디 id : id-->
+		<p>
+		<img class="imim" src="../img/p_id_r.png"/> 아이디* <input id="id" type="text" size="15"/>
+		<!-- 중복체크버튼 --> <input type="button" value="중복검사" onclick="id_check()"/>
+		</p>
+		<!-- 비밀번호 id : pwd -->
+		<p>
+		<img class="imim" src="../img/p_password_r.png"/> 비밀번호* <input id="pwd" type="password" size="15"/><br>
+		&nbsp;&nbsp;비밀번호 확인*     <input id="check" type="password" size="15"/>
+		<!-- 비밀번호 확인 버튼  id="pwd_check"-->
+			<input id="p_check" type="button" value="비밀번호 확인" onclick="pwd_check()"/>
+		</p>
+		
+		<!--  이름과 성별(성별은 둘중 하나만 체크 가능-->
+		<p>
+		<img class="imim" src="../img/p_name_r.png"/> 이름 <input type="text" size="15" id="name"/>
+		성별 <input type="radio" name="gender" id="man" value="male" />
+				<label for="man">남자</label>
+				<input type="radio" name="gender" id="woman" value="female" />
+				<label for="woman">여자</label>
+		</p>
+
+		<p><!-- onchange="sel(this)" -->
+		<!--  생년월일-->
+		<label for="birthday"><img class="imim" src="../img/p_birth.png"/> 생년월일</label><!-- <input type="text" name="birth" id="birth" size="5"> -->
+			<select name="birth" ><!-- onchange는 변화가생길때 바뀌는 이벤트 핸들러 -->
+				<option value="    ">    </option>
+				<option value="1970">1970</option><option value="1971">1971</option>
+				<option value="1972">1972</option><option value="1973">1973</option>
+				<option value="1974">1974</option><option value="1970">1975</option>
+				<option value="1970">1976</option><option value="1977">1977</option>
+				<option value="1978">1978</option><option value="1979">1979</option>
+				<option value="1980">1980</option><option value="1981">1981</option>
+				<option value="1982">1982</option><option value="1983">1983</option>
+				<option value="1984">1984</option><option value="1985">1985</option>
+				<option value="1986">1986</option><option value="1987">1987</option>
+				<option value="1988">1988</option><option value="1989">1989</option>
+				<option value="1990">1990</option><option value="1991">1991</option>
+				<option value="1992">1992</option><option value="1993">1993</option>
+				<option value="1994">1994</option><option value="1995">1995</option>
+				<option value="1996">1996</option><option value="1997">1997</option>
+				<option value="1998">1998</option><option value="1999">1999</option>
+				<option value="2000">2000</option>년</select>&nbsp;
+				<select>
+				<option value="    ">    </option>
+				<option value="1">1</option><option value="2">2</option><option value="3">3</option>
+				<option value="4">4</option><option value="5">5</option><option value="6">6</option>
+				<option value="7">7</option><option value="8">8</option><option value="9">9</option>
+				<option value="10">10</option><option value="11">11</option><option value="12">12</option>
+				</select><label>월</label>&nbsp;
+				<select>
+				<option value="    ">    </option>
+				<option value="1">1</option><option value="2">2</option><option value="3">3</option>
+				<option value="4">4</option><option value="5">5</option><option value="6">6</option>
+				<option value="7">7</option><option value="8">8</option><option value="9">9</option>
+				<option value="10">10</option><option value="11">1</option><option value="12">12</option>
+				<option value="13">13</option><option value="14">14</option><option value="15">15</option>
+				<option value="16">16</option><option value="16">16</option><option value="17">17</option>
+				<option value="18">18</option><option value="19">19</option><option value="20">20</option>
+				<option value="21">21</option><option value="22">22</option><option value="23">23</option>
+				<option value="24">24</option><option value="25">25</option><option value="26">26</option>
+				<option value="27">27</option><option value="28">28</option><option value="29">29</option>
+				<option value="30">30</option><option value="31">31</option>
+				</select><label>일</label>
+		</p>
+		
+		<!-- E-mai 부분 -->
+		<p>
+			<label for="userEmail"><img class="imim" src="../img/p_email_r.gif"/> 이메일*</label>
+			<input type="text" name="email_id" id="email_id">@<input type="text" name="domain" id="domain">  
+			<select name="email" onchange="sel(this)"><!-- onchange는 변화가생길때 바뀌는 이벤트 핸들러 -->
+				<option value="">직접입력 </option>
+				<option value="naver.com">naver.com</option>
+				<option value="daum.net">daum.net</option>
+				<option value="gmail.com">gmail.com</option>
+				<option value="nate.com">nate.com</option>            
+			</select>   
+		</p>
+
+		<!-- 확인, 취소 버튼 -->
+		<!-- 확인 버튼 클릭시에 검사수행 및 알림창띄우고 종료 -->
+		<!-- 취소 버튼 클릭시에는 창 닫음 -->
+		<p id="bottom"> <!-- ***버튼 가운데 정렬 필요*** -->
+		* 표시가 된 부분은 필수 항목입니다.<br><br>
+		<img class="btn" src="../img/ok_mem.gif" onclick="data_check()"/>
+		<img class="btn" src="../img/reset_mem.gif" onclick="clean()"/> <!-- clean함수 아직 미구현 -->
+		<img class="btn" src="../img/cancelmem.gif" onclick="window_close()"/><!-- window_close함수 미구현 -->
+		<!--  <input type="button" value="확인" onclick="data_check()"/>&nbsp;&nbsp;-->
+		<!--  <input type="button" value="취소" onclick="window_close()"/>-->
+		</p>
+	</fieldset>
+</form>
+</body>
+</html>

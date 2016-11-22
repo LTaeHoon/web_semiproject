@@ -2,12 +2,15 @@
 body,nav,div,ul,li,a,h1,p,span,img{padding:0; margin:0;}
 body{font-family:맑은 고딕; }
 
-.header	{position:relative; margin:0 auto; width:1230px; height:95px;}
-.header ul	{position:absolute; top:40px; right:20px; height:20px; }
-.header ul li{float:left; padding-left:43px; font-size:16px; font-weight:bold; }
+.header	{position:relative; margin:0 auto; width:100%; background-color:white;}
+.header ul	{position:absolute; top:40px; right:100px; height:20px; }
+.header ul li{float:left; padding-left:30px; font-size:16px; font-weight:bold;  }
 .header ul .home{color:#2a65b0;}
+.logo {margin-left:40px;}
+.menuFixed {position: fixed; top: 0px; width:100%;  z-index:600; }
 .visual{ margin:0 auto; height:425px; background:url(../img/visual_bg.jpg) 50% no-repeat; background-size:100% 100%; padding:0 }
 .left_visual{display:inline-block; margin-left:100px;}
+#video{display:inline-block;float:right; padding:50px;}
 a {text-decoration: none; color:#333;}
 a:hover{cursor:pointer;}
 ul{list-style-type:none;}
@@ -23,11 +26,11 @@ ul{list-style-type:none;}
 .stats_box .stats_blank{width:92.6px; height:10px;}
 .teams,.player,.competition,.goals_scored{width:238px; height:171px; }
 .teams span,.player span,.goals_scored span,.competition span{font-size:60px; font-weight:bold;  color:#444444;}
-.team_chart_inner{width:1%;height:14px;background-color:orange;}
+.team_chart_inner{width:1%;height:14px;background-color:orange;margin-bottom:6px;}
  #stats_box .competition .stats_number_1{font-weight:none;}
  .stats_number_1{margin-left:17px;}
 .stats_box  .stats_number{text-align:center; width:237px;  font-weight: bold;}
- .stats_txt{width:237px; text-align:center; padding:19px 0 33px 0; font-weight:bold;  font-size:14px; }
+ .stats_txt{width:237px; text-align:center; padding:19px 0 33px 0; font-weight:bold;font-size:14px; }
 
 #service{margin:0 auto;background-size:100% 100%; margin-top:0;}
 .ser_title{margin:0 auto; background-size:100% 100%; height:60px; background-color:#3b9254;font-size:30px; text-align: center;color:white;font-weight: bold;padding-top:20px; }
@@ -59,7 +62,7 @@ ul{list-style-type:none;}
 
 
 .cycle-pager { 
-    text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+    text-align: center; width: 100%; z-index:500; position: absolute; top: 10px; overflow: hidden;
 }
 .cycle-pager span { 
     font-family: arial; font-size: 50px; width: 16px; height: 16px; 
